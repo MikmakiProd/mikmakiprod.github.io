@@ -189,6 +189,35 @@ footer a{color:var(--grey)}
   .bx,.by{animation:none}
   .bx{transform:translateX(40%)}.by{transform:translateY(120px)}
 }
+
+/* Phones — keep the header, hero and tiles clean on narrow screens */
+@media (max-width:480px){
+  .wrap{padding:0 20px}
+
+  /* Header: let the wordmark shrink before it can ever hit the language pill */
+  .bar{gap:12px}
+  .brand{font-size:15px;gap:8px;min-width:0}
+  .brand img{width:28px;height:28px;flex:none}
+  .brand span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .lang{flex:none}
+  .lang select{font-size:14px;padding:6px 26px 6px 12px}
+
+  /* Hero: the mark becomes a tidy glyph above the title instead of a shape
+     that floats behind it (white-on-white was swallowing "Interactive") */
+  .hero{align-items:flex-start}
+  .hero .wrap{padding-top:100px;padding-bottom:52px}
+  .mark{position:static;order:-1;justify-self:start;width:92px;max-width:92px;margin-bottom:20px}
+  .hero p{margin-top:22px}
+  .hero .cta{margin-top:28px}
+
+  /* Contact: long email / handle wraps cleanly instead of splitting a word */
+  .tile strong{font-size:18px;word-break:normal;overflow-wrap:anywhere}
+}
+
+/* Smallest screens — stop the huge headline clipping off the right edge */
+@media (max-width:360px){
+  .hero h1{font-size:44px}
+}
 </style>
 </head>
 <body>
